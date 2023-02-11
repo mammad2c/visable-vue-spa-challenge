@@ -1,3 +1,26 @@
+# Vue – Coding Challenge
+
+## Task
+
+- Create a Vue.Js single page that shows a list of restaurants in a navigation.
+- The details of a restaurant are displayed by clicking on an entry in the
+  navigation.
+- Pick up the styles from the screenshot below.
+- _Optional:_ The UI is displayed in light/dark depending on the user's
+  preferred system settings.
+
+<img src="./screenshot.png" width="600px" />
+
+### Sources
+
+You will find all required sources in the `src/` directory. The data is in the
+file `data.json`.
+
+## Deliverables
+
+Create a project on <https://codesandbox.io> and share the link of your result
+with us.
+
 # Vue 3 + TypeScript + Vite
 
 This template should help get you started developing with Vue 3 and TypeScript in Vite. The template uses Vue 3 `<script setup>` SFCs, check out the [script setup docs](https://v3.vuejs.org/api/sfc-script-setup.html#sfc-script-setup) to learn more.
@@ -16,3 +39,11 @@ If the standalone TypeScript plugin doesn't feel fast enough to you, Volar has a
    1. Run `Extensions: Show Built-in Extensions` from VSCode's command palette
    2. Find `TypeScript and JavaScript Language Features`, right click and select `Disable (Workspace)`
 2. Reload the VSCode window by running `Developer: Reload Window` from the command palette.
+
+# How to use
+
+we use `yarn`.
+
+- run `yarn install`
+- run `yarn dev`
+- now go to `localhost:3000` to see the application.
