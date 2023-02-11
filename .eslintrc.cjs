@@ -23,6 +23,7 @@ module.exports = {
     "import/order": "error",
     "no-unused-vars": "off",
     "sort-keys": "error",
+    "vue/multi-word-component-names": "off",
   },
   settings: {
     "import/resolver": {

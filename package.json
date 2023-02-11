@@ -22,7 +22,8 @@
   "dependencies": {
     "@types/node": "^18.13.0",
     "primevue": "^3",
-    "vue": "^3.2.45"
+    "vue": "^3.2.45",
+    "vue-router": "^4.1.6"
   },
   "devDependencies": {
     "@commitlint/cli": "^17.4.2",

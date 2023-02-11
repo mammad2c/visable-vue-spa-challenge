@@ -1,6 +1,7 @@
 import { createApp } from "vue";
 import PrimeVue from "primevue/config";
 import App from "./App.vue";
+import router from "./router";
 
 // styles
 import "primevue/resources/themes/saga-blue/theme.css";
@@ -9,6 +10,7 @@ import "./style.css";
 
 const app = createApp(App);
 
+app.use(router);
 app.use(PrimeVue);
 
-createApp(App).mount("#app");
+app.mount("#app");
