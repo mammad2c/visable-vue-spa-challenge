@@ -1,13 +1,35 @@
 module.exports = {
   env: {
-    node: true,
-    jest: true,
     browser: true,
+    jest: true,
+    node: true,
   },
-  extends: ["eslint:recommended", "plugin:vue/vue3-recommended", "prettier"],
+  extends: [
+    "eslint:recommended",
+    "plugin:@typescript-eslint/recommended",
+    "plugin:import/recommended",
+    "plugin:vue/vue3-recommended",
+    "prettier",
+  ],
   parser: "vue-eslint-parser",
   parserOptions: {
     parser: "@typescript-eslint/parser",
     sourceType: "module",
+  },
+  plugins: ["@typescript-eslint"],
+  rules: {
+    "@typescript-eslint/no-unused-vars": "warn",
+    "import/newline-after-import": "error",
+    "import/order": "error",
+    "no-unused-vars": "off",
+    "sort-keys": "error",
+  },
+  settings: {
+    "import/resolver": {
+      alias: {
+        extensions: [".js", ".ts", ".vue"],
+        map: [["@", "./src"]],
+      },
+    },
   },
 };
