@@ -13,7 +13,7 @@
 import { defineProps } from "vue";
 
 interface IProps {
-  fluid: boolean;
+  fluid?: boolean;
 }
 
 withDefaults(defineProps<IProps>(), {

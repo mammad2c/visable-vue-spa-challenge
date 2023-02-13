@@ -17,6 +17,11 @@ module.exports = {
     "textColor",
     "fontWeight",
     "preflight",
+    "display",
+    "gridTemplateColumns",
+    "gridColumn",
+    "gridColumnEnd",
+    "gridColumnStart",
   ],
   plugins: [],
   theme: {

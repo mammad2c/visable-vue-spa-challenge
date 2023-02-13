@@ -16,7 +16,7 @@
     "format": "prettier ./**/*.{vue,ts,js,css,scss,md,json} --write",
     "lint": "eslint ./**/*.{vue,ts,js} --fix",
     "lint-staged": "lint-staged",
-    "test:unit": "vitest --environment jsdom --root src/"
+    "test:unit": "vitest"
   },
   "license": "MIT",
   "dependencies": {
@@ -28,6 +28,7 @@
   "devDependencies": {
     "@commitlint/cli": "^17.4.2",
     "@commitlint/config-conventional": "^17.4.2",
+    "@testing-library/jest-dom": "^5.16.5",
     "@testing-library/vue": "^6.6.1",
     "@types/jsdom": "^21.1.0",
     "@typescript-eslint/eslint-plugin": "^5.51.0",
