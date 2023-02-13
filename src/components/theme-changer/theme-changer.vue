@@ -2,9 +2,9 @@
   <Button
     type="button"
     label="Toggle"
-    @click="toggle"
     aria-haspopup="true"
     aria-controls="overlay_menu"
+    @click="toggle"
   >
     Select theme
   </Button>
