@@ -1,4 +1,3 @@
-import { describe, expect, it } from "vitest";
 import { screen } from "@testing-library/vue";
 import Container from "../container.vue";
 import renderComponent from "@/tests/render-component";

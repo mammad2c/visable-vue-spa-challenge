@@ -1,4 +1,3 @@
-import { describe, expect, it, vi } from "vitest";
 import { fireEvent, screen } from "@testing-library/vue";
 import Dropdown from "../dropdown.vue";
 import renderComponent from "@/tests/render-component";

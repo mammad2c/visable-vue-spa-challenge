@@ -1,4 +1,3 @@
-import { describe, expect, it } from "vitest";
 import { themeStore } from "../theme-store";
 
 const defaultTheme = "system";

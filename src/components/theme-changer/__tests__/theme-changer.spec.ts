@@ -1,4 +1,3 @@
-import { describe, expect, it } from "vitest";
 import { fireEvent, screen } from "@testing-library/vue";
 import ThemeChanger from "../theme-changer.vue";
 import { themeStore } from "@/store/theme/theme-store";
