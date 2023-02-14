@@ -6,30 +6,6 @@
   <link rel="icon" type="image/svg+xml" href="/vite.svg" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Restaurant Finder</title>
-  <script>
-    (function () {
-      var themeStyle = document.createElement("link")
-      themeStyle.setAttribute("id", "theme-link")
-      themeStyle.setAttribute("rel", "stylesheet")
-      var selectedTheme = localStorage.getItem("selectedTheme") || "system";
-
-      if (selectedTheme == "system") {
-        if (
-          window.matchMedia &&
-          window.matchMedia("(prefers-color-scheme: dark)").matches
-        ) {
-          selectedTheme = "dark";
-        } else {
-          selectedTheme = "light";
-        }
-      }
-
-      var url = "./themes/" + selectedTheme + ".css";
-      themeStyle.setAttribute("href", url);
-      document.head.append(themeStyle);
-    })()
-
-  </script>
 </head>
 
 <body>

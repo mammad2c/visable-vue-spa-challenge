@@ -1,7 +1,61 @@
 import { ref } from "vue";
+import dark from "@/assets/themes/dark.css?inline";
+import light from "@/assets/themes/light.css?inline";
+
+const themeFiles: Record<string, string> = {
+  dark,
+  light,
+};
 
 export const themes = ["light", "dark"];
 type ThemeType = (typeof themes)[number];
+
+const getThemeFile = (
+  theme: ThemeType,
+): { themeContent: string; themeColor: string } => {
+  const isSystem = Boolean(!theme);
+
+  if (isSystem) {
+    if (
+      window?.matchMedia &&
+      window.matchMedia("(prefers-color-scheme: dark)").matches
+    ) {
+      return {
+        themeColor: "dark",
+        themeContent: dark,
+      };
+    } else {
+      return {
+        themeColor: "light",
+        themeContent: light,
+      };
+    }
+  }
+
+  return {
+    themeColor: theme,
+    themeContent: themeFiles[theme],
+  };
+};
+
+const appendThemeStyle = (themeContent: string, themeColor: ThemeType) => {
+  let style = document.querySelector("#theme-style");
+  const themeContentNode = document.createTextNode(themeContent);
+
+  if (style) {
+    if (style.lastChild) {
+      style.removeChild(style.lastChild);
+    }
+    style.appendChild(themeContentNode);
+  } else {
+    style = document.createElement("style");
+    style.id = "theme-style";
+    style.appendChild(themeContentNode);
+    document.head.appendChild(style);
+  }
+
+  localStorage.setItem("selectedTheme", themeColor);
+};
 
 const useThemeStore = () => {
   const selectedThem = ref<ThemeType>(
@@ -9,29 +63,18 @@ const useThemeStore = () => {
   );
 
   const setTheme = (newTheme: ThemeType) => {
-    selectedThem.value = newTheme;
-    const isSystem = selectedThem.value === "system";
-    const baseUrl = "./themes/";
-    let finalTheme = newTheme;
+    const { themeContent, themeColor } = getThemeFile(newTheme);
+    selectedThem.value = themeColor;
+    appendThemeStyle(themeContent, themeColor);
+  };
 
-    if (isSystem) {
-      if (
-        window?.matchMedia &&
-        window.matchMedia("(prefers-color-scheme: dark)").matches
-      ) {
-        finalTheme = "dark";
-      } else {
-        finalTheme = "light";
-      }
-    }
-
-    document
-      .getElementById("theme-link")
-      ?.setAttribute("href", `${baseUrl}${finalTheme}.css`);
-    localStorage.setItem("selectedTheme", finalTheme);
+  const loadTheme = () => {
+    const finalTheme = getThemeFile(selectedThem.value);
+    appendThemeStyle(finalTheme.themeContent, finalTheme.themeColor);
   };
 
   return {
+    loadTheme,
     selectedThem,
     setTheme,
     themes,

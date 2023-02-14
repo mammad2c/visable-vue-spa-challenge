@@ -6,6 +6,7 @@ module.exports = {
     "padding",
     "container",
     "backgroundColor",
+    "height",
     "maxWidth",
     "fontStyle",
     "columns",

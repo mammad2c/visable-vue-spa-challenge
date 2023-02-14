@@ -1,7 +1,10 @@
 <template>
   <header
     id="main-header"
-    class="flex items-center bg-midnight bg-primary py-8 text-primary-color-text"
+    class="flex items-center bg-midnight bg-primary py-6 text-primary-color-text"
+    :style="{
+      height: `${height}px`,
+    }"
   >
     <Container fluid>
       <Row class="items-center">
@@ -21,4 +24,12 @@ import ThemeChanger from "../theme-changer";
 import Container from "@/ui/container";
 import Row from "@/ui/row";
 import Col from "@/ui/col";
+
+interface HeaderProps {
+  height?: number;
+}
+
+withDefaults(defineProps<HeaderProps>(), {
+  height: 96,
+});
 </script>

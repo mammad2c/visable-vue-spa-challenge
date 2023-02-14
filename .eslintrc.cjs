@@ -20,6 +20,7 @@ module.exports = {
   rules: {
     "@typescript-eslint/no-unused-vars": "warn",
     "import/newline-after-import": "error",
+    "import/no-unresolved": ["error", { ignore: ["\\?inline$"] }],
     "import/order": "error",
     "no-unused-vars": "off",
     "sort-keys": "error",
@@ -28,7 +29,7 @@ module.exports = {
   settings: {
     "import/resolver": {
       alias: {
-        extensions: [".js", ".ts", ".vue", ".d.ts"],
+        extensions: [".js", ".ts", ".vue", ".d.ts", ".css?inline"],
         map: [["@", "./src"]],
       },
     },

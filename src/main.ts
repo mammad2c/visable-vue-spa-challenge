@@ -4,8 +4,8 @@ import App from "./app.vue";
 import router from "./router";
 
 // styles
-import "primevue/resources/primevue.min.css";
 import "./style.css";
+import "primevue/resources/primevue.min.css";
 
 const app = createApp(App);
 
