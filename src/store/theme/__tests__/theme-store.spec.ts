@@ -1,6 +1,6 @@
 import { themeStore } from "../theme-store";
 
-const defaultTheme = "system";
+const defaultTheme = "light";
 
 describe("theme-store", () => {
   it("should be defined", () => {
@@ -15,7 +15,7 @@ describe("theme-store", () => {
     themeStore.setTheme("dark");
     expect(themeStore.selectedThem.value).toEqual("dark");
     themeStore.setTheme("system");
-    expect(themeStore.selectedThem.value).toEqual("system");
+    expect(themeStore.selectedThem.value).toEqual("light");
     themeStore.setTheme("light");
     expect(themeStore.selectedThem.value).toEqual("light");
   });
