@@ -6,6 +6,11 @@ const routes = [
     name: "home",
     path: "/",
   },
+  {
+    component: () => import("@/pages/restaurants"),
+    name: "restaurants",
+    path: "/restaurants",
+  },
 ];
 
 const router = createRouter({

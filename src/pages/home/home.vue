@@ -1,8 +1,6 @@
-import Button from '@/ui/button';
-
 <template>
   <div class="flex items-center justify-center h-full">
-    <Button type="button"> See restaurants </Button>
+    <Button :to="{ name: 'restaurants' }"> See restaurants </Button>
   </div>
 </template>
 
