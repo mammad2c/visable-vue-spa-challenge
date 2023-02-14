@@ -12,31 +12,36 @@ describe("Col", () => {
     expect(screen.queryByText("test")).toBeTruthy();
   });
 
-  it("should have correct number of columns", () => {
-    renderComponent(Col, {
+  it("should have correct number of columns", async () => {
+    const { rerender, debug } = renderComponent(Col, {
       props: {
         cols: 3,
       },
       slots: {
-        default: "test-3",
+        default: "test",
       },
     });
 
     expect(
-      screen.getByText(/test-3/i).classList.contains("col-span-3"),
+      screen.getByText(/test/i).classList.contains("col-span-3"),
     ).toBeTruthy();
 
-    renderComponent(Col, {
-      props: {
-        cols: 7,
-      },
-      slots: {
-        default: "test-7",
-      },
+    await rerender({
+      cols: 7,
+    });
+
+    debug();
+
+    expect(
+      screen.getByText(/test/i).classList.contains("col-span-7"),
+    ).toBeTruthy();
+
+    await rerender({
+      cols: 8,
     });
 
     expect(
-      screen.getByText(/test-7/i).classList.contains("col-span-7"),
+      screen.getByText(/test/i).classList.contains("col-span-8"),
     ).toBeTruthy();
   });
 
