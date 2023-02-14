@@ -1,6 +1,6 @@
 import { ref } from "vue";
 
-export const themes = ["system", "light", "dark"];
+export const themes = ["light", "dark"];
 type ThemeType = (typeof themes)[number];
 
 const useThemeStore = () => {
@@ -10,7 +10,7 @@ const useThemeStore = () => {
 
   const setTheme = (newTheme: ThemeType) => {
     selectedThem.value = newTheme;
-    const isSystem = newTheme === "system";
+    const isSystem = selectedThem.value === "system";
     const baseUrl = "./themes/";
     let finalTheme = newTheme;
 
