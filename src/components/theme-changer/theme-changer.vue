@@ -15,18 +15,4 @@ const items = themeStore.themes.map((theme) => {
     value: theme,
   };
 });
-
-// [
-//   {
-//     label: "Update",
-//     command: () => {
-//       this.$toast.add({
-//         severity: "success",
-//         summary: "Updated",
-//         detail: "Data Updated",
-//         life: 3000,
-//       });
-//     },
-//   },
-// ];
 </script>
