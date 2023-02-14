@@ -7,10 +7,6 @@ describe("Header", () => {
   it("renders properly", () => {
     renderComponent(Header);
     expect(screen.queryByText(/restaurant finder/i)).toBeTruthy();
-  });
-
-  it("should render current theme", () => {
-    renderComponent(Header);
     expect(screen.getByText(/select theme/i)).toBeTruthy();
   });
 });
