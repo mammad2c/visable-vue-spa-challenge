@@ -1,16 +1,7 @@
 import { describe, expect, it, vi } from "vitest";
-import { fireEvent, render, screen } from "@testing-library/vue";
-import PrimeVue from "primevue/config";
+import { fireEvent, screen } from "@testing-library/vue";
 import Dropdown from "../dropdown.vue";
-import router from "@/router";
-
-const renderDropdown = (props = {}) =>
-  render(Dropdown, {
-    global: {
-      plugins: [PrimeVue, router],
-    },
-    props,
-  });
+import renderComponent from "@/tests/render-component";
 
 const items = [
   {
@@ -38,9 +29,11 @@ const items = [
 
 describe("Dropdown", () => {
   it("renders properly", () => {
-    renderDropdown({
-      buttonText: "test",
-      items,
+    renderComponent(Dropdown, {
+      props: {
+        buttonText: "test",
+        items,
+      },
     });
 
     expect(screen.queryByText("test")).toBeTruthy();
@@ -48,8 +41,10 @@ describe("Dropdown", () => {
 
   it("renders properly with items and clickable", async () => {
     const spy = vi.spyOn(items[0], "command");
-    renderDropdown({
-      items,
+    renderComponent(Dropdown, {
+      props: {
+        items,
+      },
     });
 
     // click on the button to show the dropdown

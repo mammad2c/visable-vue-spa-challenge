@@ -1,17 +1,8 @@
 import { describe, expect, it } from "vitest";
-import { fireEvent, render, screen } from "@testing-library/vue";
-import PrimeVue from "primevue/config";
+import { fireEvent, screen } from "@testing-library/vue";
 import ThemeChanger from "../theme-changer.vue";
-import router from "@/router";
 import { themeStore } from "@/store/theme/theme-store";
-
-const renderComponent = (props = {}) =>
-  render(ThemeChanger, {
-    global: {
-      plugins: [PrimeVue, router],
-    },
-    props,
-  });
+import renderComponent from "@/tests/render-component";
 
 describe("ThemeChanger", () => {
   it("renders properly", () => {

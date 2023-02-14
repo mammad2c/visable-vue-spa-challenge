@@ -1,10 +1,11 @@
 import { describe, expect, it } from "vitest";
-import { render, screen } from "@testing-library/vue";
+import { screen } from "@testing-library/vue";
 import Container from "../container.vue";
+import renderComponent from "@/tests/render-component";
 
 describe("Container", () => {
   it("renders properly", () => {
-    render(Container, {
+    renderComponent(Container, {
       slots: {
         default: "test",
       },
@@ -13,7 +14,7 @@ describe("Container", () => {
   });
 
   it("should not have max width when it is fluid", () => {
-    render(Container, {
+    renderComponent(Container, {
       props: {
         fluid: true,
       },

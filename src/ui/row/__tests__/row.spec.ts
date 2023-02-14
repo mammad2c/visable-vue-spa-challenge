@@ -1,10 +1,11 @@
 import { describe, expect, it } from "vitest";
-import { render, screen } from "@testing-library/vue";
+import { screen } from "@testing-library/vue";
 import Row from "../row.vue";
+import renderComponent from "@/tests/render-component";
 
 describe("Row", () => {
   it("renders properly", () => {
-    render(Row, {
+    renderComponent(Row, {
       slots: {
         default: "test",
       },

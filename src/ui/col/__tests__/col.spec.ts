@@ -1,10 +1,11 @@
 import { describe, expect, it } from "vitest";
-import { render, screen } from "@testing-library/vue";
+import { screen } from "@testing-library/vue";
 import Col from "../col.vue";
+import renderComponent from "@/tests/render-component";
 
 describe("Col", () => {
   it("renders properly", () => {
-    render(Col, {
+    renderComponent(Col, {
       slots: {
         default: "test",
       },
@@ -13,7 +14,7 @@ describe("Col", () => {
   });
 
   it("should have correct number of columns", () => {
-    render(Col, {
+    renderComponent(Col, {
       props: {
         cols: 3,
       },
@@ -32,7 +33,7 @@ describe("Col", () => {
       `cols must be a number, received: ${col}`;
 
     try {
-      render(Col, {
+      renderComponent(Col, {
         props: {
           cols: "lorem",
         },
@@ -47,7 +48,7 @@ describe("Col", () => {
       `cols must be a number between 1 and 12, received: ${col}`;
 
     try {
-      render(Col, {
+      renderComponent(Col, {
         props: {
           cols: 20,
         },
@@ -57,7 +58,7 @@ describe("Col", () => {
     }
 
     try {
-      render(Col, {
+      renderComponent(Col, {
         props: {
           cols: 0,
         },
