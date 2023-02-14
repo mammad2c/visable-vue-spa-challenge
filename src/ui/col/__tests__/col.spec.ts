@@ -13,7 +13,7 @@ describe("Col", () => {
   });
 
   it("should have correct number of columns", async () => {
-    const { rerender, debug } = renderComponent(Col, {
+    const { rerender } = renderComponent(Col, {
       props: {
         cols: 3,
       },
@@ -29,8 +29,6 @@ describe("Col", () => {
     await rerender({
       cols: 7,
     });
-
-    debug();
 
     expect(
       screen.getByText(/test/i).classList.contains("col-span-7"),
