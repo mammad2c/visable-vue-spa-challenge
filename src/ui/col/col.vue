@@ -11,11 +11,11 @@
 <script setup lang="ts">
 import { defineProps } from "vue";
 
-interface IProps {
+interface ColProps {
   cols?: number | string;
 }
 
-const props = withDefaults(defineProps<IProps>(), {
+const props = withDefaults(defineProps<ColProps>(), {
   cols: 12,
 });
 

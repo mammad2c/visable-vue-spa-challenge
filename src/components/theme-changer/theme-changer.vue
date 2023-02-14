@@ -1,22 +1,10 @@
 <template>
-  <Button
-    type="button"
-    label="Toggle"
-    aria-haspopup="true"
-    aria-controls="overlay_menu"
-    @click="toggle"
-  >
-    Select theme
-  </Button>
-
-  <Menu id="theme-menu" ref="menu" :model="items" :popup="true" />
+  <Dropdown :items="items" button-text="Select theme" />
 </template>
 
 <script setup lang="ts">
-import { ref } from "vue";
 import { themeStore } from "@/store/theme/theme-store";
-
-const menu = ref();
+import Dropdown from "@/ui/dropdown";
 
 const items = themeStore.themes.map((theme) => {
   return {
@@ -27,10 +15,6 @@ const items = themeStore.themes.map((theme) => {
     value: theme,
   };
 });
-
-const toggle = (event: MouseEvent) => {
-  menu.value.toggle(event);
-};
 
 // [
 //   {
