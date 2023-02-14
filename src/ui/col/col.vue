@@ -1,14 +1,12 @@
 <template>
-  <div
-    :class="{
-      [`col-span-${cols}`]: true,
-    }"
-  >
+  <div :class="className">
     <slot></slot>
   </div>
 </template>
 
 <script setup lang="ts">
+import { computed } from "vue";
+
 interface ColProps {
   cols?: number | string;
 }
@@ -28,4 +26,22 @@ if (isColsNumber && (props.cols < 1 || props.cols > 12)) {
     `cols must be a number between 1 and 12, received: ${props.cols}`,
   );
 }
+
+const classNames = [
+  "",
+  "col-span-1",
+  "col-span-2",
+  "col-span-3",
+  "col-span-4",
+  "col-span-5",
+  "col-span-6",
+  "col-span-7",
+  "col-span-8",
+  "col-span-9",
+  "col-span-10",
+  "col-span-11",
+  "col-span-12",
+];
+
+const className = computed<string>(() => classNames[Number(props.cols)] || "");
 </script>

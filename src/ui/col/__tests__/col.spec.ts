@@ -19,12 +19,25 @@ describe("Col", () => {
         cols: 3,
       },
       slots: {
-        default: "test",
+        default: "test-3",
       },
     });
 
     expect(
-      screen.getByText("test").classList.contains("col-span-3"),
+      screen.getByText(/test-3/i).classList.contains("col-span-3"),
+    ).toBeTruthy();
+
+    renderComponent(Col, {
+      props: {
+        cols: 7,
+      },
+      slots: {
+        default: "test-7",
+      },
+    });
+
+    expect(
+      screen.getByText(/test-7/i).classList.contains("col-span-7"),
     ).toBeTruthy();
   });
 
