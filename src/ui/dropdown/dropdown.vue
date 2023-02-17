@@ -15,7 +15,7 @@
 
 <script lang="ts" setup>
 import { ref } from "vue";
-import { MenuItem } from "primevue/menuitem/MenuItem";
+import type { MenuItem } from "primevue/menuitem/MenuItem";
 import PMenu from "primevue/menu";
 import Button from "@/ui/button";
 
