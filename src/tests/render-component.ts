@@ -1,5 +1,6 @@
 import { render, RenderOptions } from "@testing-library/vue";
 import PrimeVue from "primevue/config";
+import { VueQueryPlugin } from "vue-query";
 import router from "@/router";
 
 const renderComponent = (
@@ -8,7 +9,7 @@ const renderComponent = (
 ) =>
   render(component, {
     global: {
-      plugins: [PrimeVue, router],
+      plugins: [PrimeVue, router, VueQueryPlugin],
     },
     ...renderOptions,
   });
