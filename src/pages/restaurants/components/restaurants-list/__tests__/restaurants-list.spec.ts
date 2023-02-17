@@ -1,19 +1,14 @@
-import { waitFor } from "@testing-library/vue";
+import { screen, waitFor } from "@testing-library/vue";
 import RestaurantsList from "../restaurants-list.vue";
 import renderComponent from "@/tests/render-component";
 
 describe("RestaurantsList", () => {
-  it("should render list of restaurants", () => {
-    const { container } = renderComponent(RestaurantsList);
+  it("should render list of restaurants", async () => {
+    renderComponent(RestaurantsList);
 
-    waitFor(() => {
-      expect(container.querySelector(".restaurant-list-item")).toBeTruthy();
-      expect(
-        container.querySelector(".restaurant-list-item__title"),
-      ).toBeTruthy();
-      expect(
-        container.querySelector(".restaurant-list-item__location"),
-      ).toBeTruthy();
+    await waitFor(() => {
+      expect(screen.queryByText(/10 restaurants/i)).toBeTruthy();
+      expect(screen.queryByText(/billy the butcher/i)).toBeTruthy();
     });
   });
 });

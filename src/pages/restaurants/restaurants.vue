@@ -1,5 +1,5 @@
 <template>
-  <Container fluid>
+  <Container fluid no-padding>
     <Row>
       <Col cols="4">
         <RestaurantsList />

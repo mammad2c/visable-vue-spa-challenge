@@ -1,7 +1,8 @@
 <template>
   <div
     :class="{
-      'container px-4 mx-auto': true,
+      'container mx-auto': true,
+      'px-4': !noPadding,
       'max-w-none': fluid,
     }"
   >
@@ -12,9 +13,11 @@
 <script setup lang="ts">
 interface IProps {
   fluid?: boolean;
+  noPadding?: boolean;
 }
 
 withDefaults(defineProps<IProps>(), {
   fluid: false,
+  noPadding: false,
 });
 </script>

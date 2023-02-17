@@ -21,17 +21,23 @@ module.exports = {
     "display",
     "gridTemplateColumns",
     "gridColumn",
-    "gridColumnEnd",
-    "gridColumnStart",
+    "borderWidth",
+    "borderColor",
+    "divideWidth",
+    "divideColor",
+    "overflow",
+    "backgroundColor",
   ],
+  darkMode: "class",
   plugins: [],
   theme: {
-    colors: {
-      primary: "var(--primary-color)",
-      "primary-color-text": "var(--primary-color-text)",
-      secondary: "var(--secondary-color)",
-      "secondary-color-text": "var(--secondary-color-text)",
+    extend: {
+      colors: {
+        primary: "var(--primary-color)",
+        "primary-color-text": "var(--primary-color-text)",
+        secondary: "var(--secondary-color)",
+        "secondary-color-text": "var(--secondary-color-text)",
+      },
     },
-    extend: {},
   },
 };

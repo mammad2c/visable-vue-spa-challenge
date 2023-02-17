@@ -10,10 +10,12 @@
 </template>
 
 <script setup lang="ts">
+import { computed } from "vue";
 import { themeStore } from "./store/theme/theme-store";
 import Header from "@/components/header";
 
-// this could be configured in a .env file
-const headerHeight = 96;
 themeStore.loadTheme();
+
+// this could be configured in a .env file
+const headerHeight = computed(() => themeStore.headerHeight);
 </script>

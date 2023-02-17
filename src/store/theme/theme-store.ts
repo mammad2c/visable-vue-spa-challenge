@@ -50,6 +50,14 @@ const appendThemeStyle = (themeContent: string, themeColor: ThemeType) => {
     document.head.appendChild(style);
   }
 
+  if (themeColor === "dark") {
+    document.documentElement.classList.remove("light");
+  } else {
+    document.documentElement.classList.remove("dark");
+  }
+
+  document.documentElement.classList.add(themeColor);
+
   style.appendChild(themeContentNode);
   localStorage.setItem("selectedTheme", themeColor);
 };
@@ -76,6 +84,7 @@ const useThemeStore = () => {
   };
 
   return {
+    headerHeight: 96,
     loadTheme,
     selectedThem,
     setTheme,

@@ -26,4 +26,17 @@ describe("Container", () => {
       true,
     );
   });
+
+  it("should not have padding when it have no-padding props", () => {
+    renderComponent(Container, {
+      props: {
+        noPadding: true,
+      },
+      slots: {
+        default: "test",
+      },
+    });
+
+    expect(screen.queryByText("test")?.classList.contains("px-4")).toBe(false);
+  });
 });

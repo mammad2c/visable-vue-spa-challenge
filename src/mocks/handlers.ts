@@ -97,7 +97,7 @@ export const handlers = [
         data: {
           search: {
             business,
-            total: business.length,
+            total: 10,
           },
         },
       }),
