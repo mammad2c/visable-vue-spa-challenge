@@ -4,6 +4,9 @@
       <Col cols="4">
         <RestaurantsList />
       </Col>
+      <Col cols="8">
+        <router-view />
+      </Col>
     </Row>
   </Container>
 </template>

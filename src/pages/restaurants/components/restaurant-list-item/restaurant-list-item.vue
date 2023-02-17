@@ -1,7 +1,12 @@
 <template>
   <router-link
-    to=""
-    class="block py-6 px-10 hover:bg-gray-200 dark:hover:bg-gray-600"
+    :to="{
+      name: 'restaurant-details',
+      params: {
+        restaurantId: restaurant.id,
+      },
+    }"
+    class="restaurant-list-item block py-6 px-10 hover:bg-gray-200 dark:hover:bg-gray-600"
   >
     <h3 class="text-2xl">{{ restaurant.name }}</h3>
     <div>
