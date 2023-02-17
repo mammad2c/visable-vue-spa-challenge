@@ -5,7 +5,7 @@
   --surface-d: rgba(0, 0, 0, 0.12);
   --surface-e: #ffffff;
   --surface-f: #ffffff;
-  --text-color: rgba(0, 0, 0, 0.87);
+  --text-color: #282c34;
   --text-color-secondary: rgba(0, 0, 0, 0.6);
   --primary-color: #282c34;
   --primary-color-text: #ffffff;
@@ -48,6 +48,10 @@
 
 * {
   box-sizing: border-box;
+}
+
+body {
+  color: var(--text-color);
 }
 
 .p-component {
