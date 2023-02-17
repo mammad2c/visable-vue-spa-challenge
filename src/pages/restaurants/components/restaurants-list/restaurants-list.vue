@@ -5,8 +5,9 @@
       height: `calc(100vh - ${themeStore.headerHeight}px)`,
     }"
   >
-    <div v-if="isLoading && !data">
-      <SkeletonLoading v-for="i in 5" :key="i" />
+    <div v-if="isLoading && !data" class="p-10">
+      <SkeletonLoading height="3rem" />
+      <SkeletonLoading v-for="i in 5" :key="i" class="my-10" />
     </div>
     <template v-else>
       <h2 class="text-2xl py-6 px-10 bg-gray-300 dark:bg-gray-800">
