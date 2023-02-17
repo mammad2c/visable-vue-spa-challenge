@@ -36,9 +36,9 @@ function apiGenerator<T extends Methods>({
         });
 
       return useQuery({
+        ...queryOptions,
         queryFn: api,
-        queryKey: queryKeyWithParams,
-        ...(queryOptions as UseQueryOptions),
+        queryKey: queryKeyWithParams as UseQueryOptions["queryKey"],
       });
     };
   }
@@ -53,9 +53,9 @@ function apiGenerator<T extends Methods>({
       });
 
     return useQuery({
+      ...queryOptions,
       queryFn: api,
-      queryKey: queryKeyWithParams,
-      ...(queryOptions as UseQueryOptions),
+      queryKey: queryKeyWithParams as UseQueryOptions["queryKey"],
     });
   };
 }
