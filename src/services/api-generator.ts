@@ -23,10 +23,10 @@ function apiGenerator<T extends Methods>({
   url,
   queryOptions = {},
 }: ApiGeneratorArgs): ApiGeneratorReturnType<T> {
-  const finalQueryKey = Array.isArray(queryKey) ? queryKey : [queryKey];
+  const arrayQueryKey = Array.isArray(queryKey) ? queryKey : [queryKey];
   if (dataMethods.includes(method)) {
     return (data: unknown = {}, params: Params = {}) => {
-      const queryKeyWithParams = [...finalQueryKey, ...params];
+      const finalQueryKey = [...arrayQueryKey, ...params];
       const api = () =>
         $http({
           data,
@@ -38,13 +38,13 @@ function apiGenerator<T extends Methods>({
       return useQuery({
         ...queryOptions,
         queryFn: api,
-        queryKey: queryKeyWithParams as UseQueryOptions["queryKey"],
+        queryKey: finalQueryKey as UseQueryOptions["queryKey"],
       });
     };
   }
 
   return (params: Params = {}) => {
-    const queryKeyWithParams = [...finalQueryKey, ...params];
+    const finalQueryKey = [...arrayQueryKey, ...params];
     const api = () =>
       $http({
         method,
@@ -55,7 +55,7 @@ function apiGenerator<T extends Methods>({
     return useQuery({
       ...queryOptions,
       queryFn: api,
-      queryKey: queryKeyWithParams as UseQueryOptions["queryKey"],
+      queryKey: finalQueryKey as UseQueryOptions["queryKey"],
     });
   };
 }
