@@ -7,7 +7,7 @@
     <template v-else-if="!data"> The restaurant not found </template>
 
     <template v-else>
-      <h1 class="text-4xl mb-6">
+      <h1 class="text-3xl font-bold mb-6">
         <a
           class="underline underline-offset-8"
           :href="data.url"

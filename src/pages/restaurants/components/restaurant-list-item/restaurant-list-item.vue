@@ -9,7 +9,7 @@
     }"
     class="restaurant-list-item block py-6 px-10 hover:bg-secondary dark:bg-gray-600 dark:hover:bg-gray-900"
   >
-    <h3 class="text-2xl">{{ restaurant.name }}</h3>
+    <h3 class="text-xl font-bold">{{ restaurant.name }}</h3>
     <RestaurantProperty type="address" :value="address" />
   </router-link>
 </template>
