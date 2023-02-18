@@ -4,10 +4,10 @@ const phoneFormatter = (value?: string): string => {
   }
 
   const countryCode = value.slice(0, 3);
-  const cityCode = value.slice(3, 5);
+  const areaCode = value.slice(3, 5);
   const restOfPhoneNumber = value.slice(5);
 
-  const formattedValue = `${countryCode} ${cityCode} ${restOfPhoneNumber}`;
+  const formattedValue = `${countryCode} ${areaCode} ${restOfPhoneNumber}`;
 
   return formattedValue;
 };

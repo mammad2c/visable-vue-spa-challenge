@@ -1,4 +1,4 @@
-import { phoneFormatter } from "../phone-formatter";
+import { phoneFormatter } from "..";
 
 describe("phoneFormatter", () => {
   it("should generate phone number and add spaces to make the number more readable", async () => {
