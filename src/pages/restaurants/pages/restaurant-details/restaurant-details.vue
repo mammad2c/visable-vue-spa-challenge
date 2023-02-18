@@ -33,9 +33,11 @@
         </Col>
 
         <Col cols="3">
-          <img :src="data.photos[0]" />
+          <img :src="data.photos[0]" alt="Restaurant logo" />
         </Col>
       </Row>
+
+      <RestaurantReviewsList :reviews="data.reviews" />
     </template>
   </div>
 </template>
@@ -49,6 +51,7 @@ import { RestaurantProperty } from "@/pages/restaurants/components/restaurant-pr
 import { phoneFormatter } from "@/utils/phone-formatter";
 import { Row } from "@/ui/row";
 import { Col } from "@/ui/col";
+import { RestaurantReviewsList } from "@/pages/restaurants/components/restaurant-reviews-list";
 
 const route = useRoute();
 

@@ -1,6 +1,11 @@
 <template>
   <div class="flex items-center">
-    <img class="inline" :src="iconUrl" :data-theme-icon="selectedTheme" />
+    <img
+      class="inline"
+      :src="iconUrl"
+      :data-theme-icon="selectedTheme"
+      :alt="`${type} icon`"
+    />
     <p class="inline">
       {{ value }}
     </p>

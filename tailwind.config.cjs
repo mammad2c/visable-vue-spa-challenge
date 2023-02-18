@@ -28,6 +28,7 @@ module.exports = {
     "overflow",
     "textDecoration",
     "textUnderlineOffset",
+    "listStyleType",
   ],
   darkMode: "class",
   plugins: [],
