@@ -1,6 +1,6 @@
 <template>
   <div>
-    <img class="inline" :src="iconUrl" :data-theme-icon="theme" />
+    <img class="inline" :src="iconUrl" :data-theme-icon="selectedTheme" />
     <p class="inline">
       {{ value }}
     </p>
@@ -29,7 +29,6 @@ const icons = {
   },
 };
 
-const theme = computed(() => themeStore.selectedTheme.value);
-
-const iconUrl = icons[props.type][theme.value];
+const selectedTheme = computed(() => themeStore.selectedTheme.value);
+const iconUrl = computed(() => icons[props.type][selectedTheme.value]);
 </script>
