@@ -1,12 +1,13 @@
 <template>
   <router-link
+    active-class="bg-secondary dark:bg-gray-900"
     :to="{
       name: 'restaurant-details',
       params: {
         restaurantId: restaurant.id,
       },
     }"
-    class="restaurant-list-item block py-6 px-10 hover:bg-gray-200 dark:hover:bg-gray-600"
+    class="restaurant-list-item block py-6 px-10 hover:bg-secondary dark:bg-gray-600 dark:hover:bg-gray-900"
   >
     <h3 class="text-2xl">{{ restaurant.name }}</h3>
     <RestaurantProperty
