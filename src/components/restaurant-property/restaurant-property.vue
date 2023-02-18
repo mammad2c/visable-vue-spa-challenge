@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="flex items-center">
     <img class="inline" :src="iconUrl" :data-theme-icon="selectedTheme" />
     <p class="inline">
       {{ value }}
