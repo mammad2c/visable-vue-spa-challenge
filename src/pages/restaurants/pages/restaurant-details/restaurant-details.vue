@@ -1,7 +1,7 @@
 <template>
   <div class="restaurant-details p-10">
     <template v-if="isLoading">
-      <SkeletonLoading />
+      <Loading />
     </template>
 
     <template v-else-if="!data"> The restaurant not found </template>
@@ -45,7 +45,7 @@
 <script setup lang="ts">
 import { useRoute } from "vue-router";
 import { computed } from "vue";
-import { SkeletonLoading } from "@/ui/skeleton-loading";
+import Loading from "./loading.vue";
 import { getRestaurantsList } from "@/api/restaurants/get-restaurants-list";
 import { RestaurantProperty } from "@/pages/restaurants/components/restaurant-property";
 import { phoneFormatter } from "@/utils/phone-formatter";
