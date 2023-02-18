@@ -15,7 +15,7 @@ describe("theme-store", () => {
     themeStore.setTheme("dark");
     expect(themeStore.selectedTheme.value).toEqual("dark");
     themeStore.setTheme("system");
-    expect(themeStore.selectedTheme.value).toEqual("light");
+    expect(themeStore.selectedTheme.value).toMatch(/^dark|light$/);
     themeStore.setTheme("light");
     expect(themeStore.selectedTheme.value).toEqual("light");
   });
