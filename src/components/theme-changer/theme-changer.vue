@@ -3,8 +3,8 @@
 </template>
 
 <script setup lang="ts">
-import { themeStore } from "@/store/theme/theme-store";
-import Dropdown from "@/ui/dropdown";
+import { themeStore } from "@/stores/theme-store";
+import { Dropdown } from "@/ui/dropdown";
 
 const items = themeStore.themes.map((theme) => {
   return {

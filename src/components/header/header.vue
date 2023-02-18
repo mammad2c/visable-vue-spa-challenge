@@ -20,10 +20,10 @@
 </template>
 
 <script setup lang="ts">
-import ThemeChanger from "@/components/theme-changer";
-import Container from "@/ui/container";
-import Row from "@/ui/row";
-import Col from "@/ui/col";
+import { ThemeChanger } from "@/components/theme-changer";
+import { Container } from "@/ui/container";
+import { Row } from "@/ui/row";
+import { Col } from "@/ui/col";
 
 interface HeaderProps {
   height?: number;

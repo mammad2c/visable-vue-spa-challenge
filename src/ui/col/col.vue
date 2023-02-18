@@ -28,7 +28,6 @@ if (isColsNumber && (props.cols < 1 || props.cols > 12)) {
 }
 
 const classNames = [
-  "",
   "col-span-1",
   "col-span-2",
   "col-span-3",
@@ -43,5 +42,7 @@ const classNames = [
   "col-span-12",
 ];
 
-const className = computed<string>(() => classNames[Number(props.cols)] || "");
+const className = computed<string>(
+  () => classNames[Number(props.cols) - 1] || "",
+);
 </script>

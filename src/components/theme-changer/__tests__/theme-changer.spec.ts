@@ -1,7 +1,7 @@
 import { fireEvent, screen } from "@testing-library/vue";
-import ThemeChanger from "..";
-import { themeStore } from "@/store/theme/theme-store";
-import renderComponent from "@/tests/render-component";
+import { ThemeChanger } from "..";
+import { themeStore } from "@/stores/theme-store";
+import { renderComponent } from "@/tests/render-component";
 
 describe("ThemeChanger", () => {
   it("renders properly", () => {

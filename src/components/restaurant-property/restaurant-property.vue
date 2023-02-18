@@ -9,7 +9,7 @@
 
 <script setup lang="ts">
 import { computed } from "vue";
-import { themeStore } from "@/store/theme/theme-store";
+import { themeStore } from "@/stores/theme-store";
 
 interface RestaurantPropertyProps {
   type: "address" | "phone";

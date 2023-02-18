@@ -17,7 +17,7 @@
 import { ref } from "vue";
 import type { MenuItem } from "primevue/menuitem/MenuItem";
 import PMenu from "primevue/menu";
-import Button from "@/ui/button";
+import { Button } from "@/ui/button";
 
 interface DropdownProps {
   buttonText?: string;

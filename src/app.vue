@@ -11,8 +11,8 @@
 
 <script setup lang="ts">
 import { computed } from "vue";
-import { themeStore } from "./store/theme/theme-store";
-import Header from "@/components/header";
+import { themeStore } from "./stores/theme-store";
+import { Header } from "@/components/header";
 
 themeStore.loadTheme();
 

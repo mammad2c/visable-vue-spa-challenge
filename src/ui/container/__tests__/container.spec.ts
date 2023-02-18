@@ -1,6 +1,6 @@
 import { screen } from "@testing-library/vue";
-import Container from "..";
-import renderComponent from "@/tests/render-component";
+import { Container } from "..";
+import { renderComponent } from "@/tests/render-component";
 
 describe("Container", () => {
   it("renders properly", () => {

@@ -1,7 +1,7 @@
 import { render, RenderOptions } from "@testing-library/vue";
 import PrimeVue from "primevue/config";
 import { VueQueryPlugin } from "vue-query";
-import router from "@/router";
+import { router } from "@/router";
 
 const renderComponent = (
   component: unknown,
@@ -14,4 +14,4 @@ const renderComponent = (
     ...renderOptions,
   });
 
-export default renderComponent;
+export { renderComponent };

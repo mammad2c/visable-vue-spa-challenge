@@ -1,6 +1,6 @@
 import { fireEvent, screen } from "@testing-library/vue";
-import Dropdown from "../dropdown.vue";
-import renderComponent from "@/tests/render-component";
+import { Dropdown } from "..";
+import { renderComponent } from "@/tests/render-component";
 
 const items = [
   {

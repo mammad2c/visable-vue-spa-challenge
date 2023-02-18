@@ -35,9 +35,9 @@
 <script setup lang="ts">
 import { useRoute } from "vue-router";
 import { computed } from "vue";
-import SkeletonLoading from "@/ui/skeleton-loading";
+import { SkeletonLoading } from "@/ui/skeleton-loading";
 import { getRestaurantsList } from "@/api/restaurants/get-restaurants-list";
-import RestaurantProperty from "@/components/restaurant-property";
+import { RestaurantProperty } from "@/components/restaurant-property";
 import { phoneFormatter } from "@/utils/phone-formatter";
 
 const route = useRoute();

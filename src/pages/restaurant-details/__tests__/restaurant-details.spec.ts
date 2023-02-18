@@ -1,7 +1,7 @@
 import { screen, waitFor } from "@testing-library/vue";
-import RestaurantDetails from "../restaurant-details.vue";
-import renderComponent from "@/tests/render-component";
-import router from "@/router";
+import RestaurantDetails from "..";
+import { renderComponent } from "@/tests/render-component";
+import { router } from "@/router";
 
 beforeAll(async () => {
   router.push({

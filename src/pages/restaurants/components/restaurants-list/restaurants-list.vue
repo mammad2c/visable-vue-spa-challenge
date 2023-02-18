@@ -30,10 +30,10 @@
 </template>
 
 <script setup lang="ts">
-import RestaurantListItem from "../restaurant-list-item";
+import { RestaurantListItem } from "../restaurant-list-item";
 import { getRestaurantsList } from "@/api/restaurants/get-restaurants-list";
-import SkeletonLoading from "@/ui/skeleton-loading";
-import { themeStore } from "@/store/theme/theme-store";
+import { SkeletonLoading } from "@/ui/skeleton-loading";
+import { themeStore } from "@/stores/theme-store";
 
 const { data, isLoading } = getRestaurantsList();
 </script>

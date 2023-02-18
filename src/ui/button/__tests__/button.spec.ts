@@ -1,6 +1,6 @@
 import { screen } from "@testing-library/vue";
-import Button from "..";
-import renderComponent from "@/tests/render-component";
+import { Button } from "..";
+import { renderComponent } from "@/tests/render-component";
 
 describe("Button", () => {
   it("should renders properly", () => {

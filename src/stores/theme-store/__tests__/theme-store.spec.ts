@@ -1,4 +1,4 @@
-import { themeStore } from "../theme-store";
+import { themeStore } from "..";
 
 const defaultTheme = "light";
 

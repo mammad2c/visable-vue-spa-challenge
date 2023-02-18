@@ -7,7 +7,7 @@ const themeFiles: Record<string, string> = {
   light,
 };
 
-export const themes = ["light", "dark"];
+export const themes: ["light", "dark"] = ["light", "dark"];
 type ThemeType = "dark" | "light";
 
 const getTheme = (

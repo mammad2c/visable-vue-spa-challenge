@@ -1,7 +1,7 @@
 import { fireEvent, screen, waitFor } from "@testing-library/vue";
-import RestaurantsList from "..";
-import renderComponent from "@/tests/render-component";
-import router from "@/router";
+import { RestaurantsList } from "..";
+import { renderComponent } from "@/tests/render-component";
+import { router } from "@/router";
 
 describe("RestaurantsList", () => {
   it("should render list of restaurants", async () => {

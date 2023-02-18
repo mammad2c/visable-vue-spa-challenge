@@ -1,8 +1,8 @@
 import { screen } from "@testing-library/vue";
 import { nextTick } from "vue";
-import RestaurantProperty from "../restaurant-property.vue";
-import renderComponent from "@/tests/render-component";
-import { themeStore } from "@/store/theme/theme-store";
+import { RestaurantProperty } from "..";
+import { renderComponent } from "@/tests/render-component";
+import { themeStore } from "@/stores/theme-store";
 
 describe("RestaurantProperty", () => {
   it("should render correct icon", async () => {

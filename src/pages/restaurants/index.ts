@@ -1,3 +1,3 @@
-import Home from "./restaurants.vue";
+import Restaurants from "./restaurants.vue";
 
-export default Home;
+export default Restaurants;

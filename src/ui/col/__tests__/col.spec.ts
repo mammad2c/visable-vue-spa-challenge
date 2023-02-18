@@ -1,6 +1,6 @@
 import { screen } from "@testing-library/vue";
-import Col from "../col.vue";
-import renderComponent from "@/tests/render-component";
+import { Col } from "..";
+import { renderComponent } from "@/tests/render-component";
 
 describe("Col", () => {
   it("renders properly", () => {
