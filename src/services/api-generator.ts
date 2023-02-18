@@ -28,31 +28,33 @@ function apiGenerator<ResponseType, SelectedData = ResponseType>({
   if (dataMethods.includes(method)) {
     return (data: unknown = {}, params: Params = {}) => {
       const finalQueryKey = [...arrayQueryKey, { ...params }];
-      const rq = useQuery<ResponseType, Error, SelectedData>({
+
+      const query = useQuery<ResponseType, Error, SelectedData>({
+        ...queryOptions,
         queryFn: async () => {
           const response = await $http({ data, method, params, url });
           return response.data;
         },
-        queryKey: finalQueryKey as UseQueryOptions["queryKey"],
+        queryKey: finalQueryKey,
       });
 
-      return rq;
+      return query;
     };
   }
 
   return (params: Params = {}) => {
     const finalQueryKey = [...arrayQueryKey, { ...params }];
 
-    const rq = useQuery<ResponseType, Error>({
+    const query = useQuery<ResponseType, Error>({
       ...queryOptions,
       queryFn: async () => {
         const response = await $http({ method, params, url });
         return response.data;
       },
-      queryKey: finalQueryKey as UseQueryOptions["queryKey"],
+      queryKey: finalQueryKey,
     });
 
-    return rq;
+    return query;
   };
 }
 
