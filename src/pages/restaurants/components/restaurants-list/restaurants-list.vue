@@ -18,7 +18,6 @@
           v-for="restaurant in data?.data?.search?.business"
           :key="restaurant.id"
           :restaurant="restaurant"
-          :marker-icon="markerIcon"
         />
       </div>
     </template>
@@ -26,17 +25,10 @@
 </template>
 
 <script setup lang="ts">
-import { computed } from "vue";
 import RestaurantListItem from "../restaurant-list-item";
 import { getRestaurantsList } from "@/api/restaurants/get-restaurants-list";
 import SkeletonLoading from "@/ui/skeleton-loading";
-import markerIconBlack from "@/assets/img/marker-icon.svg";
-import markerIconWhite from "@/assets/img/marker-icon-white.svg";
 import { themeStore } from "@/store/theme/theme-store";
 
 const { data, isLoading } = getRestaurantsList();
-
-const markerIcon = computed(() =>
-  themeStore.selectedThem.value === "dark" ? markerIconWhite : markerIconBlack,
-);
 </script>

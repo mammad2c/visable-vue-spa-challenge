@@ -8,11 +8,11 @@ const themeFiles: Record<string, string> = {
 };
 
 export const themes = ["light", "dark"];
-type ThemeType = (typeof themes)[number];
+type ThemeType = "dark" | "light";
 
 const getTheme = (
-  theme: ThemeType,
-): { themeContent: string; themeColor: string } => {
+  theme: ThemeType | "system",
+): { themeContent: string; themeColor: ThemeType } => {
   const isSystem = theme === "system";
 
   if (isSystem) {
@@ -63,30 +63,26 @@ const appendThemeStyle = (themeContent: string, themeColor: ThemeType) => {
 };
 
 const useThemeStore = () => {
-  const selectedThem = ref<ThemeType>(
-    localStorage.getItem("selectedTheme") || "system",
+  const selectedTheme = ref<ThemeType>(
+    getTheme((localStorage.getItem("selectedTheme") as ThemeType) || "system")
+      .themeColor,
   );
 
-  if (selectedThem.value === "system") {
-    const { themeColor } = getTheme(selectedThem.value);
-    selectedThem.value = themeColor;
-  }
-
-  const setTheme = (newTheme: ThemeType) => {
+  const setTheme = (newTheme: ThemeType | "system") => {
     const { themeContent, themeColor } = getTheme(newTheme);
-    selectedThem.value = themeColor;
+    selectedTheme.value = themeColor;
     appendThemeStyle(themeContent, themeColor);
   };
 
   const loadTheme = () => {
-    const finalTheme = getTheme(selectedThem.value);
+    const finalTheme = getTheme(selectedTheme.value || "system");
     appendThemeStyle(finalTheme.themeContent, finalTheme.themeColor);
   };
 
   return {
     headerHeight: 96,
     loadTheme,
-    selectedThem,
+    selectedTheme,
     setTheme,
     themes,
   };

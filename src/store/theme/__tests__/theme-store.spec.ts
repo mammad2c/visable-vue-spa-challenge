@@ -8,15 +8,15 @@ describe("theme-store", () => {
   });
 
   it("should have a default theme", () => {
-    expect(themeStore.selectedThem.value).toEqual(defaultTheme);
+    expect(themeStore.selectedTheme.value).toEqual(defaultTheme);
   });
 
   it("should set the theme", () => {
     themeStore.setTheme("dark");
-    expect(themeStore.selectedThem.value).toEqual("dark");
+    expect(themeStore.selectedTheme.value).toEqual("dark");
     themeStore.setTheme("system");
-    expect(themeStore.selectedThem.value).toEqual("light");
+    expect(themeStore.selectedTheme.value).toEqual("light");
     themeStore.setTheme("light");
-    expect(themeStore.selectedThem.value).toEqual("light");
+    expect(themeStore.selectedTheme.value).toEqual("light");
   });
 });

@@ -21,6 +21,6 @@ describe("ThemeChanger", () => {
 
     // click on the light theme
     await fireEvent.click(light);
-    expect(themeStore.selectedThem.value).toBe("light");
+    expect(themeStore.selectedTheme.value).toBe("light");
   });
 });
