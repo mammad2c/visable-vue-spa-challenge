@@ -1,5 +1,5 @@
 import { screen } from "@testing-library/vue";
-import Button from "../button.vue";
+import Button from "..";
 import renderComponent from "@/tests/render-component";
 
 describe("Button", () => {

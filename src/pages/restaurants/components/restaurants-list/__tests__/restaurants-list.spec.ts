@@ -1,5 +1,5 @@
 import { fireEvent, screen, waitFor } from "@testing-library/vue";
-import RestaurantsList from "../restaurants-list.vue";
+import RestaurantsList from "..";
 import renderComponent from "@/tests/render-component";
 import router from "@/router";
 

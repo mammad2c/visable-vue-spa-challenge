@@ -1,5 +1,5 @@
 import { screen } from "@testing-library/vue";
-import Header from "../header.vue";
+import Header from "..";
 import renderComponent from "@/tests/render-component";
 
 describe("Header", () => {

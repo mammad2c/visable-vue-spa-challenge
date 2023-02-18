@@ -1,5 +1,5 @@
 import { fireEvent, screen } from "@testing-library/vue";
-import ThemeChanger from "../theme-changer.vue";
+import ThemeChanger from "..";
 import { themeStore } from "@/store/theme/theme-store";
 import renderComponent from "@/tests/render-component";
 
