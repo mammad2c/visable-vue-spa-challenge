@@ -1,7 +1,7 @@
 import { rest } from "msw";
 
 export const handlers = [
-  rest.get("data.json", (req, res, ctx) => {
+  rest.get("/data.json", (req, res, ctx) => {
     const business = [
       {
         display_phone: "+49 40 57283299",
