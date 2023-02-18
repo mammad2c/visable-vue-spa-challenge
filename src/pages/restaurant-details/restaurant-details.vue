@@ -7,9 +7,27 @@
     <template v-else-if="!data"> The restaurant not found </template>
 
     <template v-else>
-      <h1 class="text-4xl">
-        <a :href="data.url">{{ data.name }}</a>
+      <h1 class="text-4xl mb-6">
+        <a
+          class="underline underline-offset-8"
+          :href="data.url"
+          target="_blank"
+          >{{ data.name }}</a
+        >
       </h1>
+
+      <div class="mb-6">
+        <span class="font-bold text-lg">Rating:</span>
+        {{ data.rating }}
+      </div>
+
+      <RestaurantProperty
+        class="mb-6"
+        type="address"
+        :value="data.location.formatted_address"
+      />
+
+      <RestaurantProperty class="mb-10" type="phone" :value="formattedPhone" />
     </template>
   </div>
 </template>
@@ -19,6 +37,8 @@ import { useRoute } from "vue-router";
 import { computed } from "vue";
 import SkeletonLoading from "@/ui/skeleton-loading";
 import { getRestaurantsList } from "@/api/restaurants/get-restaurants-list";
+import RestaurantProperty from "@/components/restaurant-property";
+import { phoneFormatter } from "@/utils/phone-formatter";
 
 const route = useRoute();
 
@@ -29,4 +49,6 @@ const data = computed(() => {
     (restaurant) => restaurant.id === route.params.restaurantId,
   );
 });
+
+const formattedPhone = computed(() => phoneFormatter(data.value?.phone));
 </script>

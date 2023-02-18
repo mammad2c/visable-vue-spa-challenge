@@ -10,14 +10,12 @@
     class="restaurant-list-item block py-6 px-10 hover:bg-secondary dark:bg-gray-600 dark:hover:bg-gray-900"
   >
     <h3 class="text-2xl">{{ restaurant.name }}</h3>
-    <RestaurantProperty
-      type="address"
-      :value="restaurant.location.formatted_address"
-    />
+    <RestaurantProperty type="address" :value="address" />
   </router-link>
 </template>
 
 <script setup lang="ts">
+import { computed } from "vue";
 import RestaurantProperty from "@/components/restaurant-property";
 import { RestaurantDetails } from "@/types/restaurants";
 
@@ -25,5 +23,10 @@ interface RestaurantsListItemProps {
   restaurant: RestaurantDetails;
 }
 
-defineProps<RestaurantsListItemProps>();
+const props = defineProps<RestaurantsListItemProps>();
+
+const address = computed(
+  () =>
+    `${props.restaurant.location.address1}, ${props.restaurant.location.city}`,
+);
 </script>
