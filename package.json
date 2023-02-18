@@ -12,7 +12,7 @@
     "prepare": "husky install",
     "dev": "vite --port 3000",
     "build": "vue-tsc && vite build",
-    "preview": "vite preview",
+    "preview": "vite preview --port 3000",
     "format": "prettier ./**/*.{vue,ts,js,css,scss,md,json} --write",
     "lint": "eslint ./**/*.{vue,ts,js} --fix",
     "lint-staged": "lint-staged",
