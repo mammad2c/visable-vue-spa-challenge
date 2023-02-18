@@ -1,5 +1,5 @@
 import axios, { AxiosRequestConfig } from "axios";
-import { useQuery, UseQueryOptions } from "vue-query";
+import { useQuery } from "vue-query";
 import { QueryOptions } from "vue-query/types";
 
 type Methods = "GET" | "POST" | "PUT" | "PATCH" | "DELETE";
