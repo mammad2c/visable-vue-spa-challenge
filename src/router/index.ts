@@ -9,7 +9,7 @@ const routes: RouteRecordRaw[] = [
   {
     children: [
       {
-        component: () => import("@/pages/restaurant-details"),
+        component: () => import("@/pages/restaurants/pages/restaurant-details"),
         name: "restaurant-details",
         path: ":restaurantId",
       },

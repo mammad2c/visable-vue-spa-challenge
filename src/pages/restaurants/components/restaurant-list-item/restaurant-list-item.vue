@@ -16,7 +16,7 @@
 
 <script setup lang="ts">
 import { computed } from "vue";
-import { RestaurantProperty } from "@/components/restaurant-property";
+import { RestaurantProperty } from "@/pages/restaurants/components/restaurant-property";
 import { RestaurantDetails } from "@/types/restaurant";
 
 interface RestaurantsListItemProps {
