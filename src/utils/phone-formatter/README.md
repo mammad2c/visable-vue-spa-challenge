@@ -1,5 +1,3 @@
-@@ -0,0 +1,7 @@
-
 # phoneFormatter
 
 we use this function to format phone number that is more readable.
